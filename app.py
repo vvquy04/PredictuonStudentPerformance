@@ -21,7 +21,7 @@ except Exception as e:
 # Trang chủ với form nhập dữ liệu
 @app.route('/')
 def home():
-    return render_template('/templates/index.html')
+    return render_template('index.html')
 
 # Xử lý dự đoán khi nhận dữ liệu mới từ form
 @app.route('/predict', methods=['POST'])
