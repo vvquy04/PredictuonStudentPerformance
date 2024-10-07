@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np 
 
 
-# Xác định các tham số cần thử nghiệm
+# # Xác định các tham số cần thử nghiệm
 # param_grid = {
 #     'hidden_layer_sizes': [(50,), (100,), (50, 50), (100, 50), (100, 100)],  # số lượng neuron và tầng ẩn
 #     'activation': ['relu', 'tanh'],   # hàm kích hoạt
@@ -18,9 +18,9 @@ import numpy as np
 # }
 
 # Sử dụng GridSearchCV để thử nghiệm với các tổ hợp tham số
-# mlp = MLPRegressor()
-# grid_search = GridSearchCV(mlp, param_grid, cv=5, scoring='neg_mean_squared_error', verbose=2, n_jobs=-1)
-# grid_search.fit(X_train, y_train)
+mlp = MLPRegressor()
+grid_search = GridSearchCV(mlp, param_grid, cv=5, scoring='neg_mean_squared_error', verbose=2, n_jobs=-1)
+grid_search.fit(X_train, y_train)
 
 # Huấn luyện mô hình MLP Regressor
 mlp_model = MLPRegressor(hidden_layer_sizes=(50,), max_iter=2000, random_state=42, activation='relu', alpha=0.01, learning_rate='constant', solver='adam')
